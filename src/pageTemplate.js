@@ -57,6 +57,14 @@ module.exports = team => {
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
 </head>
 
-
+<body>
+    <div class="container-fluid">
+        <dive class="row">
+            <div class="team-area col-12 d-flex justify-content-center"> ${generateTeam(team)}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 `
 }
