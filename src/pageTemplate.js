@@ -1,5 +1,8 @@
-const generateManager = Manager => {
-    return `
+const { createPromptModule } = require("inquirer");
+
+const generateTeam = team => {
+    const generateManager = Manager => {
+        return `
     <div class="card employee-card">
     <div class="card-header">
             <h2 class="card-title"> ${manager.getName()} </h2>
@@ -14,7 +17,7 @@ const generateManager = Manager => {
         <div>
     <div>    
     `;
-}
+    }
 
 const generateEmployee = employee => {
     return `
@@ -33,5 +36,19 @@ const generateIntern = intern => {
     
     `;
 }
+}
 
+//export function to generate entire page
+module.exports = team => {
 
+    return `
+    <!DOCTYPE html>
+<html lang="en">
+
+<head> <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<title>My Team</title>
+`
+}
