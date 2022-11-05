@@ -10,12 +10,12 @@ const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
 const { isTypedArray } = require("util/types")
 
-
+// paths
 const OUTPUT_DIR = path.resolve(_dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const teamMembers = [];
-
+const idArray = [];
 
 function appMenu() {
     function createManager(){
@@ -111,8 +111,14 @@ function appMenu() {
     }
 
     function buildTeam(){
-
+        // create the output directory if the output path doesnt exist
+        if (!fs.existsSync(OUTPUT_DIR)) {
+            fs.mkdirSync(OUTPUT_DIR)
+        }
+        fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
     }
+
+    createManager();
 }
 
 
