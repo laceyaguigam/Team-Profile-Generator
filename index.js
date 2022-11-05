@@ -1,8 +1,13 @@
 //make sure to put in the notes section did review with instructional staff
 
+// lines 4-10 are everything that needs to be required in
+const inquirer = require("inquirer")
+const path = require("path")
+const fs = require("fs")
 
-
-
+const Manager = require("./lib/Manager")
+const Engineer = require("./lib/Engineer")
+const Intern = require("./lib/Intern")
 
 
 
