@@ -21,3 +21,14 @@ const generateEmployee = employee => {
     
     `;
 }
+
+const generateEngineer = engineer => {
+    return `
+    
+    `;
+}
+
+
+
+
+
