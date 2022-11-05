@@ -28,7 +28,10 @@ const generateEngineer = engineer => {
     `;
 }
 
-
-
+const generateIntern = intern => {
+    return `
+    
+    `;
+}
 
 
