@@ -8,6 +8,7 @@ const fs = require("fs")
 const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
+const { isTypedArray } = require("util/types")
 
 
 
@@ -16,9 +17,9 @@ const teamMembers = [];
 
 
 function appMenu() {
-    function createMAnager( {
+    function createManager(){
         console.log("Please build your team")
-        inquirer.prompt([ {
+        inquirer.prompt([{
             type: "input",
             name: "managerName",
             message: "What is the team manager's name?",
@@ -29,20 +30,49 @@ function appMenu() {
                 return "Please enter at least one character.";
             }
         },
-          {
+        {
             type: "input",
             name: "managerId",
             message: "What is the team manager's ID?",
-            validate: answer =>{
+            validate: answer => {
                 const pass = answer.match(/^[1-9]\d*$/);
                 if (pass) {
                     return true;
                 }
                 return "Please enter a positive number greater than zero.";
             }
-          }   
-        ])
-    })
+        },
+        {
+            type: "input",
+            name: "managerEmail",
+            message: "What is the team manager's email?",
+            validate: answer => {
+                const pass = answer.match(/\$+@\S+\.\S+/);
+                if (pass) {
+                    return true;
+                }
+                return "Please enter a valid email address.";
+            }
+        },
+        {
+            type: "input",
+            name: "managerOfficeNumber",
+            message: "What is the team manager's office number?",
+            validate: answer => {
+                const pass = answer.match(/^[1-9]\d*$/);
+                if (pass) {
+                    return true;
+                }
+                return "Please enter a positive number greater than zero.";
+            }
+        }
+        ]).then(answers => {
+            const manager = new Manager(answers.managerName, answers.ManagerId, answers.managerEmail, answers.managerOfficeNumber);
+            teamMembers.push(manager);
+            idArray.push(answers.managerId);
+            createTeam();
+        });
+    }
 }
 
 
