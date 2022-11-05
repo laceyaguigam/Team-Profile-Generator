@@ -11,7 +11,8 @@ const Intern = require("./lib/Intern")
 const { isTypedArray } = require("util/types")
 
 
-
+const OUTPUT_DIR = path.resolve(_dirname, "output")
+const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const teamMembers = [];
 
@@ -97,6 +98,20 @@ function appMenu() {
                 buildTeam();
         }
     });
+    }
+
+    function addEngineer(){
+        inquirer.prompt([])
+    }
+
+    function addIntern(){
+        inquirer.prompt([
+
+        ])
+    }
+
+    function buildTeam(){
+
     }
 }
 
