@@ -13,5 +13,5 @@ const generateManager = Manager => {
             </ul>
         <div>
     <div>    
-    `
+    `;
 }
