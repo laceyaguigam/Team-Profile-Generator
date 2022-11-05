@@ -15,3 +15,9 @@ const generateManager = Manager => {
     <div>    
     `;
 }
+
+const generateEmployee = employee => {
+    return `
+    
+    `;
+}
