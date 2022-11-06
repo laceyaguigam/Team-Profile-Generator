@@ -30,7 +30,6 @@ const generateEmployee = employee => {
             <ul class="list-group">
                 <li class="list-group-item"> ID: ${employee.getId()}</li>
                 <li class="list-group-item"? Email: <a href="mailto: ${employee.getEmail()}</a></li>
-                <li class="list-group-item"> Office number: ${employee.getOfficeNumber()}</li>
             </ul>
         <div>
     <div>  
@@ -39,7 +38,18 @@ const generateEmployee = employee => {
 
 const generateEngineer = engineer => {
     return `
-    
+    <div class="card employee-card">
+    <div class="card-header">
+            <h2 class="card-title"> ${engineer.getName()} </h2>
+         </div>
+         <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item"> ID: ${engineer.getId()}</li>
+                <li class="list-group-item"? Email: <a href="mailto: ${engineer.getEmail()}</a></li>
+                <li class="list-group-item"> Office number: ${engineer.getGithub()}</li>
+            </ul>
+        <div>
+    <div> 
     `;
 }
 
