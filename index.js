@@ -157,7 +157,7 @@ function appMenu() {
         }
 
     function addIntern(){
-        inquirer.prompt([
+        inquirer.prompt([ {
             type: "input",
             name: "internName",
             message: "What is the Intern's name?",
@@ -203,6 +203,12 @@ function appMenu() {
                 return "Please enter at least one character.";
             }
         }
+    ]).then(answers => {
+        const intern = add Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+        teamMembers.push(intern);
+        idArray.push(answers.internId);
+        createTeam();
+    }
 
     function buildTeam(){
         // create the output directory if the output path doesnt exist
