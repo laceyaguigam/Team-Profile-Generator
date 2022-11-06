@@ -55,7 +55,18 @@ const generateEngineer = engineer => {
 
 const generateIntern = intern => {
     return `
-    
+    <div class="card employee-card">
+    <div class="card-header">
+            <h2 class="card-title"> ${intern.getName()} </h2>
+         </div>
+         <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item"> ID: ${intern.getId()}</li>
+                <li class="list-group-item"? Email: <a href="mailto: ${intern.getEmail()}</a></li>
+                <li class="list-group-item"> Office number: ${intern.getSchool()}</li>
+            </ul>
+        <div>
+    <div>
     `;
 }
 }
