@@ -8,7 +8,7 @@ const fs = require("fs")
 const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
-const { isTypedArray } = require("util/types")
+const { idArray } = require("util/types")
 
 // paths
 const OUTPUT_DIR = path.resolve(_dirname, "output")
@@ -101,7 +101,59 @@ function appMenu() {
     }
 
     function addEngineer(){
-        inquirer.prompt([])
+        inquirer.prompt([ {
+            type: "input",
+            name: "engineerName",
+            message: "What is the engineer's name?",
+            validate: answer => {
+                if (answer !== "") {
+                    return true;
+                }
+                return "Please enter at least one character.";
+            }
+        },
+        {
+            type: "input",
+            name: "engineerId",
+            message: "What is the engineer's ID?",
+            validate: answer => {
+                const pass = answer.match(/^[1-9]\d*$/);
+                if (pass) {
+                    return true;
+                }
+                return "Please enter a positive number greater than zero.";
+            }
+        },
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is the engineer's email?",
+            validate: answer => {
+                const pass = answer.match(/\$+@\S+\.\S+/);
+                if (pass) {
+                    return true;
+                }
+                return "Please enter a valid email address.";
+            }
+        },
+        {
+            type: "input",
+            name: "engineerGithub",
+            message: "What is the engineer's github?",
+            validate: answer => {
+                if (answer !== "") {
+                    return true;
+                }
+                return "Please enter at least one character.";
+            }
+        }
+
+    // ]).then(answers => {
+    //     const engineer = add Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+    //     teamMembers.push(engineer);
+    //     idArray.push(answers.engineerId);
+    //     createTeam();
+    // });
     }
 
     function addIntern(){
@@ -125,7 +177,7 @@ appMenu();
 
 
 
-
+name id email github
 
 
 
