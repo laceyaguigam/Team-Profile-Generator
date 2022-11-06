@@ -121,6 +121,8 @@ function appMenu() {
     createManager();
 }
 
+appMenu();
+
 
 
 
