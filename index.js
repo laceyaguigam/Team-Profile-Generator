@@ -15,7 +15,7 @@ const OUTPUT_DIR = path.resolve(_dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const teamMembers = [];
-const idArray = [];
+
 
 function appMenu() {
     function createManager(){
@@ -149,7 +149,7 @@ function appMenu() {
         }
 
     ]).then(answers => {
-            const engineer = add Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+            const engineer = addEngineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
             teamMembers.push(engineer);
             idArray.push(answers.engineerId);
             createTeam();
@@ -204,11 +204,11 @@ function appMenu() {
             }
         }
     ]).then(answers => {
-        const intern = add Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+        const intern = addIntern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
         teamMembers.push(intern);
         idArray.push(answers.internId);
         createTeam();
-    }
+    })
 
     function buildTeam(){
         // create the output directory if the output path doesnt exist
@@ -222,4 +222,4 @@ function appMenu() {
 }
 
 appMenu();
-
+}
