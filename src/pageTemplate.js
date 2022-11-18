@@ -1,7 +1,7 @@
-const { createPromptModule } = require("inquirer");
+// const { createPromptModule } = require("inquirer");
 
 const generateTeam = team => {
-    const generateManager = Manager => {
+    const generateManager = manager => {
         return `
             <div class="card employee-card">
             <div class="card-header">
@@ -84,10 +84,13 @@ module.exports = team => {
 
     <title>My Team</title>
 
-    <link rel="stylesheet" href="https:stack.path.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-gg0yr0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylestyle.css">
-    <script src="https://kit.fontawesome.com/c502137733.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+<script src="https://kit.fontawesome.com/c502137733.js"></script>
+
+
+
 </head>
 
 <body>
@@ -97,6 +100,8 @@ module.exports = team => {
             </div>
         </div>
     </div>
+
+    
 </body>
 </html>
 `
