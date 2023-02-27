@@ -3,15 +3,15 @@
 const generateTeam = team => {
     const generateManager = manager => {
         return `
-            <div class="card employee-card">
-            <div class="card-header">
-                    <h2 class="card-title"> ${manager.getName()} </h2>
-                    <h3 class="card-title"> <i class="fas fa-mug-hot-mr-2"> <//i> ${manager.getRole()}</h3>
+            <div class="card employee-card shadow">
+            <div class="card-header bg-primary">
+                    <h2 class="card-title text-white"> ${manager.getName()}  </h2>
+                    <h3 class="card-title"> <i class="bi bi-cup-hot-fill"></i> ${manager.getRole()}</h3>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-light">
                     <ul class="list-group">
                         <li class="list-group-item"> ID: ${manager.getId()}</li>
-                        <li class="list-group-item"? Email: <a href="mailto: ${manager.getEmail()}</a></li>
+                        <li class="list-group-item"?> Email: <a href="mailto: ${manager.getEmail()}</a></li>
                         <li class="list-group-item"> Office number: ${manager.getOfficeNumber()}</li>
                     </ul>
                 <div>
@@ -21,15 +21,16 @@ const generateTeam = team => {
 
 const generateEmployee = employee => {
     return `
-    <div class="card employee-card">
-    <div class="card-header">
-            <h2 class="card-title"> ${employee.getName()} </h2>
-            <h3 class="card-title"> <i class="fas fa-mug-hot-mr-2"> <//i> ${employee.getRole()}</h3>
+    <div class="card employee-card shadow">
+    <div class="card-header bg-primary">
+            <h2 class="card-title text-white"> ${employee.getName()} </h2>
+            <h3 class="card-title text-white"> <i class="bi bi-cup-hot-fill"></i> ${employee.getRole()}</h3>
          </div>
-         <div class="card-body">
+         <div class="card-body bg-light">
             <ul class="list-group">
                 <li class="list-group-item"> ID: ${employee.getId()}</li>
                 <li class="list-group-item"? Email: <a href="mailto: ${employee.getEmail()}</a></li>
+                <li class="list-group-item"> Github: ${employee.getGithub()}</li>
             </ul>
         <div>
     <div>  
@@ -39,14 +40,14 @@ const generateEmployee = employee => {
 const generateEngineer = engineer => {
     return `
     <div class="card employee-card">
-    <div class="card-header">
+    <div class="card-header bg-primary">
             <h2 class="card-title"> ${engineer.getName()} </h2>
          </div>
          <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item"> ID: ${engineer.getId()}</li>
                 <li class="list-group-item"? Email: <a href="mailto: ${engineer.getEmail()}</a></li>
-                <li class="list-group-item"> Office number: ${engineer.getGithub()}</li>
+                <li class="list-group-item"> Github: ${engineer.getGithub()}</li>
             </ul>
         <div>
     <div> 
@@ -55,15 +56,16 @@ const generateEngineer = engineer => {
 
 const generateIntern = intern => {
     return `
-    <div class="card employee-card">
-    <div class="card-header">
-            <h2 class="card-title"> ${intern.getName()} </h2>
+    <div class="card employee-card shadow">
+    <div class="card-header bg-primary">
+            <h2 class="card-title text-white"> ${intern.getName()} </h2>
+            <h3 class="card-title"> <i class="bi bi-mortarboard-fill"></i> </h3> 
          </div>
-         <div class="card-body">
+         <div class="card-body bg-light">
             <ul class="list-group">
                 <li class="list-group-item"> ID: ${intern.getId()}</li>
                 <li class="list-group-item"? Email: <a href="mailto: ${intern.getEmail()}</a></li>
-                <li class="list-group-item"> Office number: ${intern.getSchool()}</li>
+                <li class="list-group-item"> School: ${intern.getSchool()}</li>
             </ul>
         <div>
     <div>
@@ -94,6 +96,14 @@ module.exports = team => {
 </head>
 
 <body>
+
+<div class="container-fluid">
+    <div class="row bg-danger position-absolute top-50 start-50">
+    <p class="fs-1 text-center fw-bold text-white">My Team</p>
+    </div>
+</div>
+
+
     <div class="container-fluid">
         <dive class="row">
             <div class="team-area col-12 d-flex justify-content-center"> ${generateTeam(team)}

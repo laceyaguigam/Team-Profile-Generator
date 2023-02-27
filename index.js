@@ -9,10 +9,10 @@ const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
 // const { idArray } = require("util/types")
-const render = require("./src/pageTemplate")
+// const render = require("./src/pageTemplate")
 // paths
 const OUTPUT_DIR = path.resolve(__dirname, "output")
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+// const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const teamMembers = [];
 
