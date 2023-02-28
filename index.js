@@ -40,6 +40,14 @@ function buildTeam(){
 </head>
 
 <body>
+
+
+    <div class="container-fluid ">
+        <div class="row bg-danger w-auto justify-content-center ">
+            <p class="text-white py-4 ">My Team</p>
+        </div>
+    </div>
+
     <div class="container-fluid align-items-center border-primary">
         <div class="row row-cols-1 row-cols-md-3 g-4 align-items-center">
             <div class="team-area col-12 d-flex justify-content-center">
