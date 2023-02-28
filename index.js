@@ -40,19 +40,19 @@ function buildTeam(){
 </head>
 
 <body>
-    <div class="container-fluid">
-        <dive class="row">
+    <div class="container-fluid align-items-center border-primary">
+        <div class="row row-cols-1 row-cols-md-3 g-4 align-items-center">
             <div class="team-area col-12 d-flex justify-content-center">
     `);
     for (let i = 0; i < teamMembers.length; i++) {
         console.log(teamMembers[i])
         
         fs.appendFileSync('./dist/team.html', `
-        <div class="card employee-card">
-        <div class="card-header">
-                <h2 class="card-title"> ${teamMembers[i].getName()} </h2>
+        <div class="card employee-card shadow h-100">
+        <div class="card-header bg-primary">
+                <h2 class="card-title text-white"> ${teamMembers[i].getName()} </h2>
              </div>
-             <div class="card-body">
+             <div class="card-body bg-light">
                 <ul class="list-group">
                     <li class="list-group-item"> ID: ${teamMembers[i].id}</li>
                     <li class="list-group-item"?> Email: <a href="mailto: ${teamMembers[i].email}">${teamMembers[i].email}</a></li>
