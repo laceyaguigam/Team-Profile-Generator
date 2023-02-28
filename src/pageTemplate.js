@@ -61,7 +61,7 @@ const generateIntern = intern => {
             <h2 class="card-title text-white"> ${intern.getName()} </h2>
             <h3 class="card-title"> <i class="bi bi-mortarboard-fill"></i> </h3> 
          </div>
-         <div class="card-body bg-light">
+         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item"> ID: ${intern.getId()}</li>
                 <li class="list-group-item"? Email: <a href="mailto: ${intern.getEmail()}</a></li>
@@ -97,22 +97,20 @@ module.exports = team => {
 
 <body>
 
-<div class="container-fluid">
-    <div class="row bg-danger position-absolute top-50 start-50">
-    <p class="fs-1 text-center fw-bold text-white">My Team</p>
-    </div>
-</div>
+<div class="container-fluid align-items-center border-primarygit">
 
 
     <div class="container-fluid">
-        <dive class="row">
+        <div class="row">
             <div class="team-area col-12 d-flex justify-content-center"> ${generateTeam(team)}
             </div>
         </div>
     </div>
-
+</div>
     
 </body>
 </html>
 `
 }
+
+
